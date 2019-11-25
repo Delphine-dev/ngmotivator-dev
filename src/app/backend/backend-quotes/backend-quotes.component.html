@@ -1,0 +1,12 @@
+<h2>Toutes les citations</h2>
+<div *ngIf="isAdmin">
+  <div *ngFor="let quote of quotes$ |async">    
+    <button (click)="toggleToEditMode(quote)" mat-button color="primary">modif</button>
+    <button (click)="deleteQuote(quote)" mat-button color="warn">suppr</button>
+    <span (click)="showQuoteDetails(quote)">{{ quote.text }}</span>
+  </div>
+</div>
+
+<div *ngIf="!isAdmin">
+  Veuillez vous connecter avec un compte autorisé à gérer les citations.
+</div>

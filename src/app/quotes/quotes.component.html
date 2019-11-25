@@ -1,0 +1,7 @@
+<mat-toolbar color="primary">Motivator</mat-toolbar>
+<a routerLink="/admin">admin</a>
+
+<h2>Toutes les citations</h2>
+
+
+<app-quote *ngFor="let q of quotes$  | async" [quote]="q"></app-quote>
